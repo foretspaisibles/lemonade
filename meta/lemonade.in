@@ -4,3 +4,10 @@ description="Monad library with bubbles"
 requires="mixture"
 archive(byte) = "lemonade.cma"
 archive(native) = "lemonade.cmxa"
+
+package "ppx" (
+ version = "@VERSION@"
+ description = "ppx rewriter syntax extension"
+ requires = "lemonade"
+ ppx = "ppx_lemonade"
+)
