@@ -70,6 +70,12 @@ sig
   val unless : bool -> unit t -> unit t
   (** [unless flag m] returns [m] only if [flag] is [false]. *)
 
+  val catch : (unit -> 'a t) -> (exn -> 'a t) -> 'a t
+  (** [catch f h] is a computation yielding the same result as [f ()]
+      if this computation does not throw an exception. If this computation
+      raises an exception, then it is passed to [h] to determine the
+      result of the overall computation. *)
+
   module Infix : sig
     val ( <*> ) : ('a -> 'b) t -> 'a t -> 'b t
     (** A shorthand for [apply], the sequential application. *)

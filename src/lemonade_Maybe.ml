@@ -59,11 +59,11 @@ let to_list = function
   | None -> []
 
 let filter_map f lst =
-  List.fold_left
-    (fun acc x -> match f x with
-       | Some(a) -> a :: acc
-       | None -> acc) [] lst
-  |> List.rev
+  List.rev
+    (List.fold_left
+       (fun acc x -> match f x with
+          | Some(a) -> a :: acc
+          | None -> acc) [] lst)
 
 let filter lst =
   filter_map (fun x -> x) lst

@@ -30,6 +30,7 @@ sig
   val filter : ('a -> bool t) -> 'a t list -> 'a list t
   val only_if : bool -> unit t -> unit t
   val unless : bool -> unit t -> unit t
+  val catch : (unit -> 'a t) -> (exn -> 'a t) -> 'a t
   module Infix : sig
     val ( <*> ) : ('a -> 'b) t -> 'a t -> 'b t
     val ( <$> ) : ('a -> 'b) -> 'a t -> 'b t

@@ -18,6 +18,14 @@ AC_NEED_FINDLIB
 AC_NEED_FINDLIB_PKG([mixture])
 AC_NEED_FINDLIB_PKG([broken])
 AC_WITH_OCAML_SITE_LIB
+
+AC_ARG_ENABLE([ppx-rewriter],
+  [AS_HELP_STRING([--enable-ppx-rewriter],
+      [install the ppx rewriter])],
+    [ENABLE_PPX_REWRITER=${enable_ppx_rewriter}],
+    [ENABLE_PPX_REWRITER=no])
+  AC_SUBST([ENABLE_PPX_REWRITER])
+
 AC_CONFIG_FILES([Makefile.config])
 AC_OUTPUT
 

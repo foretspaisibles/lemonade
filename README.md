@@ -11,6 +11,8 @@ It implements the following monads:
 - **Lemonade_Lazy** for lazy computations.
 - **Lemonade_List** for computations yielding several possible results.
 - **Lemonade_Maybe** for computations yielding zero or one result.
+- **Lemonade_Ok** for computations failing with context information,
+  as in [yojson][yojson-home].
 - **Lemonade_Reader** for computations explicitly depending on some environment.
 - **Lemonade_Retry** for retryable computations.
 - **Lemonade_State** for computations modifying a state.
@@ -64,12 +66,23 @@ The **GNU Make** program usually give up the ghost, croaking
 Step 7 requires that you can `su -` if you are not already `root`.
 
 
+## Free software
+
+Lemonade is free software: copying it and redistributing it is very
+much welcome under conditions of the [CeCILL-B][licence-url] licence
+agreement, found in the [COPYING][licence-en] file of the
+distribution, apart from the file `ppx/ppx_lemonade.ml` which derives
+from the file `ppx_lwt_ex.ml` and is licensed under the LGPL version
+2.1 with the additional exemption that compiling, linking, and/or
+using OpenSSL is allowed.
+
+
 Michael Grünewald in Aachen, on November 12, 2015
 
   [licence-url]:        http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
   [licence-en]:         COPYING
-  [licence-fr]:         COPYING-FR
   [bsdowl-home]:        https://github.com/michipili/bsdowl
   [bsdowl-install]:     https://github.com/michipili/bsdowl/wiki/Install
   [broken-home]:        https://github.com/michipili/broken
   [mixture-home]:       https://github.com/michipili/mixture
+  [yojson-home]:        https://github.com/mjambon/yojson

@@ -12,10 +12,17 @@
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
 PACKAGE=		lemonade
-VERSION=		0.3.1
+VERSION=		0.4.0
 OFFICER=		michipili@gmail.com
 
+.sinclude "Makefile.config"
+
 MODULE=			ocaml.lib:src
+
+.if!empty(ENABLE_PPX_REWRITER:Myes)
+MODULE+=		ocaml.prog:ppx
+.endif
+
 MODULE+=		ocaml.meta:meta
 MODULE+=		ocaml.manual:manual
 
@@ -23,6 +30,10 @@ SUBDIR=			testsuite
 
 EXTERNAL=		ocaml.findlib:broken
 EXTERNAL+=		ocaml.findlib:mixture
+
+.if!empty(ENABLE_PPX_REWRITER:Myes)
+EXTERNAL+=		ocaml.findlib:ppx_tools.metaquot
+.endif
 
 CONFIGURE+=		Makefile.config.in
 

@@ -40,15 +40,15 @@ sig
 
   include Lemonade_Type.S
 
-  val throw : error -> 'a t
-  (** Throw the given error. *)
+  val error : error -> 'a t
+  (** Fail with the given error. *)
 
-  val catch : 'a t -> (error -> 'a t) -> 'a t
-  (** [catch m handler] is a monad containing the same value as [m]
+  val recover : 'a t -> (error -> 'a t) -> 'a t
+  (** [recover m handler] is a monad containing the same value as [m]
       and thrown errors are interepreted by the [handler]. *)
 
   val run : 'a t -> 'a outcome
-  (** Perform a computation throwing errors. *)
+  (** Perform a computation with errors. *)
 end
 
 (** Functor building an implementation of the [Success] monad. *)

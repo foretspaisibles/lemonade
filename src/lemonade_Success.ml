@@ -24,8 +24,8 @@ sig
   type (+'a) outcome =
     | Success of 'a
     | Error of error
-  val throw : error -> 'a t
-  val catch : 'a t -> (error -> 'a t) -> 'a t
+  val error : error -> 'a t
+  val recover : 'a t -> (error -> 'a t) -> 'a t
   val run : 'a t -> 'a outcome
 end
 
@@ -60,10 +60,10 @@ struct
   include Basis
   include MethodsMonad
 
-  let throw err =
+  let error err =
     Error(err)
 
-  let catch m handler =
+  let recover m handler =
     match m with
     | Success(x) -> Success(x)
     | Error(err) -> handler err
