@@ -1,0 +1,8 @@
+[Lemonade] provides standard monads as a library.
+
+{!modules:
+  Lemonade_Lazy
+  Lemonade_List
+  Lemonade_Maybe
+  Lemonade_Success
+}

@@ -1,0 +1,5 @@
+name="lemonade"
+version="@VERSION@"
+description="Monad library with bubbles"
+archive(byte) = "lemonade.cma"
+archive(native) = "lemonade.cmxa"
