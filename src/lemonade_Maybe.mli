@@ -16,5 +16,17 @@
 type (+'a) t =
   'a option
 
-include Mixture_Monad.S
+val pp_print : (Format.formatter -> 'a -> unit) -> Format.formatter -> 'a option -> unit
+(** A generic printer for option values. *)
+
+include Lemonade_Type.S
     with type 'a t := 'a t
+
+(** The maybe monad transformer. *)
+module T(M:Lemonade_Type.S) :
+sig
+  include Lemonade_Type.S
+    with type 'a t = 'a option M.t
+
+  val lift : 'a M.t -> 'a t
+end

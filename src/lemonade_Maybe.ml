@@ -28,7 +28,39 @@ struct
 
 end
 
-module MethodsMonad = Mixture_Monad.Make(Basis)
+module MethodsMonad =
+  Mixture_Monad.Make(Basis)
 
 include Basis
 include MethodsMonad
+
+let pp_print f pp m =
+  let open Format in
+  match m with
+  | Some(x) -> fprintf pp "Some(%a)" f x
+  | None -> fprintf pp "None"
+
+
+module T(M:Mixture_Monad.S) =
+struct
+
+  module Germ =
+  struct
+
+    type 'a t =
+      'a option M.t
+
+    let bind m f =
+      M.bind m
+        (function
+          | None -> M.return None
+          | Some(x) -> f x)
+
+    let return x =
+      M.return(Some(x))
+
+  end
+
+
+  include Mixture_Monad.Transformer.Make(Basis)(M)(Germ)
+end

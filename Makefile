@@ -12,14 +12,17 @@
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
 PACKAGE=		lemonade
-VERSION=		0.1.0
+VERSION=		0.1.0-current
 OFFICER=		michipili@gmail.com
 
 MODULE=			ocaml.lib:src
 MODULE+=		ocaml.meta:meta
 MODULE+=		ocaml.manual:manual
 
-EXTERNAL=		ocaml.findlib:mixture
+SUBDIR=			testsuite
+
+EXTERNAL=		ocaml.findlib:broken
+EXTERNAL+=		ocaml.findlib:mixture
 
 CONFIGURE+=		Makefile.config.in
 

@@ -16,5 +16,20 @@
 type (+'a) t =
   'a Lazy.t
 
-include Mixture_Monad.S
+include Lemonade_Type.S
     with type 'a t := 'a t
+
+(** Execute the computation. *)
+val exec : 'a t -> 'a
+
+val pp_print : (Format.formatter -> 'a -> unit) -> Format.formatter -> 'a Lazy.t -> unit
+(** A generic printer for lazy values. *)
+
+(** The lazy monad transformer. *)
+module T(M:Lemonade_Type.S) :
+sig
+  include Lemonade_Type.S
+    with type 'a t = 'a Lazy.t M.t
+
+  val lift : 'a M.t -> 'a t
+end
