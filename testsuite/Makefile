@@ -14,6 +14,7 @@
 PROGRAM=		unit-testing
 
 SRCS=			testList.ml
+SRCS+=			testMaybe.ml
 SRCS+=			main.ml
 
 OCAMLLFLAGS+=		-linkall
