@@ -18,12 +18,14 @@ install: [
   ["make"  "-I%{bsdowl:share}%" "install"] {os  = "freebsd"}
 ]
 remove: [
-  ["ocamlfind" "remove" "mixture"]
-  ["rm" "-rf" "%{share}%/doc/mixture"]
+  ["ocamlfind" "remove" "lemonade"]
+  ["rm" "-rf" "%{share}%/doc/lemonade"]
 ]
 depends: [
   "ocamlfind"
+  "broken"
   "bsdowl" {>= "3.0.0"}
+  "mixture"
 ]
 depexts: [
   [["debian"] ["bmake"]]
