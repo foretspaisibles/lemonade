@@ -18,14 +18,46 @@ struct
     'a Lazy.t
 
   let bind m f =
-    f (Lazy.force m)
+    lazy (Lazy.force (f (Lazy.force m)))
 
   let return x =
     lazy x
 
 end
 
-module MethodsMonad = Mixture_Monad.Make(Basis)
+module MethodsMonad =
+  Mixture_Monad.Make(Basis)
 
 include Basis
 include MethodsMonad
+
+let exec m =
+  Lazy.force m
+
+let pp_print f pp m =
+  let open Format in
+  if Lazy.is_val m then
+    fprintf pp "Lazy(%a)" f (Lazy.force m)
+  else
+    fprintf pp "Lazy(<deferred>)"
+
+
+module T(M:Mixture_Monad.S) =
+struct
+
+  module Germ =
+  struct
+
+    type 'a t =
+      'a Lazy.t M.t
+
+    let bind m f =
+      M.bind m (fun x -> (f (Lazy.force x)))
+
+    let return x =
+      M.return(lazy x)
+
+  end
+
+  include Mixture_Monad.Transformer.Make(Basis)(M)(Germ)
+end

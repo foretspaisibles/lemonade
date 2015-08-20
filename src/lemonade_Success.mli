@@ -13,12 +13,55 @@
 
 (** Success monad.
 
-This is mostly a toy example, but its reporting possibilities could be
-extended in something useful. *)
+    The success monad is a monad in which one can run computations
+    throwing errors. This is implemented as a functor parametrised by the
+    error type.
 
-type (+'a) t =
-| Success of 'a
-| Error of string
+    Note that the [throw] and [catch] operations defined below are
+    totally independant of exceptions. *)
 
-include Mixture_Monad.S
-    with type 'a t := 'a t
+(** The input signature of the functor [Lemonade_Success.Make]. *)
+module type ErrorType =
+sig
+  type t
+  (** The type of error messages. *)
+end
+
+(** The output signature of the functor [Lemonade_Success.Make]. *)
+module type S =
+sig
+  type error
+  (** The type of error messages. *)
+
+  (** The outcome of computations throwing errors. *)
+  type (+'a) outcome =
+    | Success of 'a
+    | Error of error
+
+  include Lemonade_Type.S
+
+  val throw : error -> 'a t
+  (** Throw the given error. *)
+
+  val catch : 'a t -> (error -> 'a t) -> 'a t
+  (** [catch m handler] is a monad containing the same value as [m]
+      and thrown errors are interepreted by the [handler]. *)
+
+  val run : 'a t -> 'a outcome
+  (** Perform a computation throwing errors. *)
+end
+
+(** Functor building an implementation of the [Success] monad. *)
+module Make(Error:ErrorType):
+sig
+  include S
+    with type error = Error.t
+
+  (** The success monad transformer. *)
+  module T(M:Lemonade_Type.S): sig
+    include Lemonade_Type.S
+      with type 'a t = 'a t M.t
+
+    val lift : 'a M.t -> 'a t
+  end
+end

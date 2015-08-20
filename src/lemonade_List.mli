@@ -16,5 +16,17 @@
 type (+'a) t =
   'a list
 
-include Mixture_Monad.S
+include Lemonade_Type.S
     with type 'a t := 'a t
+
+val pp_print : (Format.formatter -> 'a -> unit) -> Format.formatter -> 'a list -> unit
+(** A generic printer for list values. *)
+
+(** The list monad transformer. *)
+module T(M:Lemonade_Type.S) :
+sig
+  include Lemonade_Type.S
+    with type 'a t = 'a list M.t
+
+  val lift : 'a M.t -> 'a t
+end

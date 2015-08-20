@@ -1,4 +1,4 @@
-### Makefile -- Monads
+### Makefile -- Test suite
 
 # Lemonade (https://github.com/michipili/lemonade)
 # This file is part of Lemonade
@@ -11,15 +11,20 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
-LIBRARY=		lemonade
+PROGRAM=		unit-testing
 
-SRCS=			lemonade_Type.ml
-SRCS+=			lemonade_Lazy.ml
-SRCS+=			lemonade_List.ml
-SRCS+=			lemonade_Maybe.ml
-SRCS+=			lemonade_Retry.ml
-SRCS+=			lemonade_Success.ml
+SRCS=			testList.ml
+SRCS+=			testMaybe.ml
+SRCS+=			main.ml
 
-.include "ocaml.lib.mk"
+OCAMLLFLAGS+=		-linkall
+
+do-test: build
+	./unit-testing
+
+do-install:
+	${NOP}
+
+.include "ocaml.prog.mk"
 
 ### End of file `Makefile'
