@@ -22,6 +22,7 @@ SRCS+=			lemonade_Reader.ml
 SRCS+=			lemonade_Retry.ml
 SRCS+=			lemonade_State.ml
 SRCS+=			lemonade_Success.ml
+SRCS+=			lemonade_Writer.ml
 
 .include "ocaml.lib.mk"
 
