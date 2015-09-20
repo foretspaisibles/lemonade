@@ -18,6 +18,7 @@ SRCS+=			lemonade_Continuation.ml
 SRCS+=			lemonade_Lazy.ml
 SRCS+=			lemonade_List.ml
 SRCS+=			lemonade_Maybe.ml
+SRCS+=			lemonade_Reader.ml
 SRCS+=			lemonade_Retry.ml
 SRCS+=			lemonade_State.ml
 SRCS+=			lemonade_Success.ml
