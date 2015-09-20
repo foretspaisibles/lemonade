@@ -80,4 +80,58 @@ struct
 
   let with_state f m =
     fun state -> m (f state)
+
+
+  module T(M:Lemonade_Type.S) =
+  struct
+    type state = State.t
+
+    module BasisT =
+    struct
+      type 'a t =
+        state -> (state * 'a) M.t
+
+      let return x =
+        fun s  -> M.return (s, x)
+
+      let bind m f =
+        fun state -> M.bind(m state)(fun (state', x) -> (f x) state')
+    end
+
+    module MethodsMonadT =
+      Mixture_Monad.Make(BasisT)
+
+    include BasisT
+    include MethodsMonadT
+
+    let state m =
+      fun state -> M.return (m state)
+
+    let read =
+      fun state -> M.return(state, state)
+
+    let write x =
+      fun state -> M.return(x,())
+
+    let modify f =
+      bind read (fun s -> write (f s))
+
+    let run m state =
+      m state
+
+    let eval m state =
+      M.map snd (m state)
+
+    let exec m state =
+      M.map fst (m state)
+
+    let maps f m =
+      fun state -> (M.map f) (m state)
+
+    let with_state f m =
+      fun state -> m (f state)
+
+    let lift m =
+      fun state -> M.map (fun x -> (state,x)) m
+  end
 end
