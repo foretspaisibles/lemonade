@@ -1,0 +1,281 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Lemonade_Type" rel="Chapter" href="Lemonade_Type.html">
+<link title="Lemonade_Lazy" rel="Chapter" href="Lemonade_Lazy.html">
+<link title="Lemonade_List" rel="Chapter" href="Lemonade_List.html">
+<link title="Lemonade_Maybe" rel="Chapter" href="Lemonade_Maybe.html">
+<link title="Lemonade_Retry" rel="Chapter" href="Lemonade_Retry.html">
+<link title="Lemonade_Success" rel="Chapter" href="Lemonade_Success.html"><title>The Lemonade Library : Index of values</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of values</h1>
+<table>
+<tr><td align="left"><br></td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL( <* )">( &lt;* )</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+Sequence actions, discarding the value of the first
+        argument.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL( >* )">( &gt;* )</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+Sequence actions, discarding the value of the second
+        argument.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL(<$>)">(&lt;$&gt;)</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+A shorthand for <code class="code">map</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL(<*>)">(&lt;*&gt;)</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+A shorthand for <code class="code">apply</code>, the sequential application.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL(<=<)">(&lt;=&lt;)</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+<code class="code">f &lt;=&lt; g</code> is the monadic composition of <code class="code">g</code> followed by <code class="code">f</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL(>=>)">(&gt;=&gt;)</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+<code class="code">g &gt;=&gt; f</code> is the (contravariant) monadic composition of <code class="code">g</code>
+        followed by <code class="code">f</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL(>>)">(&gt;&gt;)</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+<code class="code">m &gt;&gt; f</code> binds <code class="code">m</code> to <code class="code">f</code>, a context function.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.Infix.html#VAL(>>=)">(&gt;&gt;=)</a> [<a href="Lemonade_Type.S.Infix.html">Lemonade_Type.S.Infix</a>]</td>
+<td><div class="info">
+<code class="code"> m &gt;&gt;= f</code> is equivalent to <code class="code">bind m f</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>A</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALapply">apply</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">apply f</code> sequence computations and combine their results with <code class="code">f</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALbind">bind</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">bind m f</code> bind <code class="code">f</code> to the monad <code class="code">m</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALbind2">bind2</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+Similar to <code class="code">bind</code>, but works on two arguments.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALbind3">bind3</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+Similar to <code class="code">bind</code>, but works on three arguments.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALbind4">bind4</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+Similar to <code class="code">bind</code>, but works on four arguments.
+</div>
+</td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Lemonade_Success.S.html#VALcatch">catch</a> [<a href="Lemonade_Success.S.html">Lemonade_Success.S</a>]</td>
+<td><div class="info">
+<code class="code">catch m handler</code> is a monad containing the same value as <code class="code">m</code>
+      and thrown errors are interepreted by the <code class="code">handler</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Retry.S.html#VALcatch">catch</a> [<a href="Lemonade_Retry.S.html">Lemonade_Retry.S</a>]</td>
+<td><div class="info">
+<code class="code">catch m handler</code> is a monad containing the same value as <code class="code">m</code>
+      and thrown errors are interepreted by the <code class="code">handler</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>D</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALdefault">default</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+<code class="code">default val opt</code> return the content of <code class="code">opt</code> or <code class="code">val</code> if it is empty.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALdist">dist</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+The applicative distributor for list, that is, the natural
+      transformation of a list of computations in the computation of a
+      list.
+</div>
+</td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Lemonade_Lazy.html#VALexec">exec</a> [<a href="Lemonade_Lazy.html">Lemonade_Lazy</a>]</td>
+<td><div class="info">
+Execute the computation.
+</div>
+</td></tr>
+<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALfilter">filter</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+<code class="code">filter lst</code> is the list of values held by the options in <code class="code">lst</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALfilter">filter</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+Filter a list of computations with the given monadic predicate.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALfilter_map">filter_map</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+<code class="code">filter_map f lst</code> is the list deduced from <code class="code">lst</code> by applying <code class="code">f</code>
+    to element of the list and retaining the values held by the list.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALfind">find</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+Return the value held by an option or raise <code class="code">Not_found</code> if the
+    option is empty.
+</div>
+</td></tr>
+<tr><td align="left"><br>I</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALignore">ignore</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+Monadic ignore.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALis_none">is_none</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+Predicate recognising empty options.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALis_some">is_some</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+Predicate recognising options containing a value.
+</div>
+</td></tr>
+<tr><td align="left"><br>J</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALjoin">join</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">join mm</code> bind <code class="code">mm</code> to the identity, reducing the monad.
+</div>
+</td></tr>
+<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Lemonade_Success.Make.T.html#VALlift">lift</a> [<a href="Lemonade_Success.Make.T.html">Lemonade_Success.Make.T</a>]</td>
+<td></td></tr>
+<tr><td><a href="Lemonade_Maybe.T.html#VALlift">lift</a> [<a href="Lemonade_Maybe.T.html">Lemonade_Maybe.T</a>]</td>
+<td></td></tr>
+<tr><td><a href="Lemonade_List.T.html#VALlift">lift</a> [<a href="Lemonade_List.T.html">Lemonade_List.T</a>]</td>
+<td></td></tr>
+<tr><td><a href="Lemonade_Lazy.T.html#VALlift">lift</a> [<a href="Lemonade_Lazy.T.html">Lemonade_Lazy.T</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALmap">map</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">map f</code> is the natural tranformation between monads,
+      induced by <code class="code">f</code>.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALmap2">map2</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+A version of <code class="code">map</code> for binary functions.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALmap3">map3</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+A version of <code class="code">map</code> for ternary functions.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALmap4">map4</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+A version of <code class="code">map</code> for quaternary functions.
+</div>
+</td></tr>
+<tr><td align="left"><br>O</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALof_list">of_list</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+Return an option containing the first element of the list if any,
+    or empty if the list is empty.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALonly_if">only_if</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">only_if flag m</code> returns <code class="code">m</code> only if <code class="code">flag</code> is <code class="code">true</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Lemonade_Retry.RetryType.html#VALpolicy">policy</a> [<a href="Lemonade_Retry.RetryType.html">Lemonade_Retry.RetryType</a>]</td>
+<td><div class="info">
+The type of policies, used to select a retry strategy.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALpp_print">pp_print</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+A generic printer for option values.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_List.html#VALpp_print">pp_print</a> [<a href="Lemonade_List.html">Lemonade_List</a>]</td>
+<td><div class="info">
+A generic printer for list values.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Lazy.html#VALpp_print">pp_print</a> [<a href="Lemonade_Lazy.html">Lemonade_Lazy</a>]</td>
+<td><div class="info">
+A generic printer for lazy values.
+</div>
+</td></tr>
+<tr><td align="left"><br>R</td></tr>
+<tr><td><a href="Lemonade_Retry.S.html#VALretry">retry</a> [<a href="Lemonade_Retry.S.html">Lemonade_Retry.S</a>]</td>
+<td><div class="info">
+<code class="code">retry tag strategy m</code> compute the same value as <code class="code">m</code> having the
+      chance let the retry policy use <code class="code">strategy</code> on errors.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALreturn">return</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">return a</code> embed the value <code class="code">a</code> in the monad.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Success.S.html#VALrun">run</a> [<a href="Lemonade_Success.S.html">Lemonade_Success.S</a>]</td>
+<td><div class="info">
+Perform a computation throwing errors.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Retry.S.html#VALrun">run</a> [<a href="Lemonade_Retry.S.html">Lemonade_Retry.S</a>]</td>
+<td><div class="info">
+Run the given retryable computation.
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Lemonade_Success.S.html#VALthrow">throw</a> [<a href="Lemonade_Success.S.html">Lemonade_Success.S</a>]</td>
+<td><div class="info">
+Throw the given error.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Retry.S.html#VALthrow">throw</a> [<a href="Lemonade_Retry.S.html">Lemonade_Retry.S</a>]</td>
+<td><div class="info">
+Throw the given error.
+</div>
+</td></tr>
+<tr><td><a href="Lemonade_Maybe.html#VALto_list">to_list</a> [<a href="Lemonade_Maybe.html">Lemonade_Maybe</a>]</td>
+<td><div class="info">
+Return a list containing the element held by the option if any, ot
+    the empty list ifthe option is empty.
+</div>
+</td></tr>
+<tr><td align="left"><br>U</td></tr>
+<tr><td><a href="Lemonade_Type.S.html#VALunless">unless</a> [<a href="Lemonade_Type.S.html">Lemonade_Type.S</a>]</td>
+<td><div class="info">
+<code class="code">unless flag m</code> returns <code class="code">m</code> only if <code class="code">flag</code> is <code class="code">false</code>.
+</div>
+</td></tr>
+</table>
+</body>
+</html>

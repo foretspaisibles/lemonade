@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Lemonade_Retry.S.html">
+<link rel="Up" href="Lemonade_Retry.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Lemonade_Type" rel="Chapter" href="Lemonade_Type.html">
+<link title="Lemonade_Lazy" rel="Chapter" href="Lemonade_Lazy.html">
+<link title="Lemonade_List" rel="Chapter" href="Lemonade_List.html">
+<link title="Lemonade_Maybe" rel="Chapter" href="Lemonade_Maybe.html">
+<link title="Lemonade_Retry" rel="Chapter" href="Lemonade_Retry.html">
+<link title="Lemonade_Success" rel="Chapter" href="Lemonade_Success.html"><title>The Lemonade Library : Lemonade_Retry.RetryType</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Lemonade_Retry.html" title="Lemonade_Retry">Up</a>
+&nbsp;<a class="post" href="Lemonade_Retry.S.html" title="Lemonade_Retry.S">Next</a>
+</div>
+<h1>Module type <a href="type_Lemonade_Retry.RetryType.html">Lemonade_Retry.RetryType</a></h1>
+
+<pre><span class="keyword">module type</span> RetryType = <code class="code">sig</code> <a href="Lemonade_Retry.RetryType.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+The input signature of the functor <code class="code">Lemonade_Retry.Make</code>.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> </pre>
+<div class="info ">
+The type of error messages.<br>
+</div>
+
+
+<pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type"></code>tag</span> </pre>
+<div class="info ">
+The type of tags identifying retry strategies.<br>
+</div>
+
+
+<pre><span id="TYPEenvironment"><span class="keyword">type</span> <code class="type"></code>environment</span> </pre>
+<div class="info ">
+The type of computation environment.<br>
+</div>
+
+
+<pre><span id="VALpolicy"><span class="keyword">val</span> policy</span> : <code class="type">(<a href="Lemonade_Retry.RetryType.html#TYPEtag">tag</a> * 'a) list -><br>       <a href="Lemonade_Retry.RetryType.html#TYPEenvironment">environment</a> -><br>       (<a href="Lemonade_Retry.RetryType.html#TYPEtag">tag</a> * 'a) list</code></pre><div class="info ">
+The type of policies, used to select a retry strategy.
+<p>
+
+      The policy filters applyable retry strategies under a given
+      environment.<br>
+</div>
+</body></html>
