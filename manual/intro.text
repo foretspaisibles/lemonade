@@ -1,8 +1,16 @@
 [Lemonade] provides standard monads as a library.
 
 {!modules:
+  Lemonade_Continuation
   Lemonade_Lazy
   Lemonade_List
   Lemonade_Maybe
+  Lemonade_Reader
+  Lemonade_State
   Lemonade_Success
+  Lemonade_Writer
+}
+
+{!modules:
+  Lemonade_Type
 }
