@@ -7,6 +7,7 @@ bug-reports: "https://github.com/michipili/lemonade/issues"
 dev-repo: "https://github.com/michipili/lemonade.git"
 tags: [
   "pattern"
+  "monad"
 ]
 build: [
   ["./configure" "--prefix" prefix]
@@ -22,10 +23,10 @@ remove: [
   ["rm" "-rf" "%{share}%/doc/lemonade"]
 ]
 depends: [
-  "ocamlfind"
-  "broken"
+  "broken" {>= "0.4.2"}
   "bsdowl" {>= "3.0.0"}
-  "mixture"
+  "mixture"{>= "0.2.0"}
+  "ocamlfind"
 ]
 depexts: [
   [["debian"] ["bmake"]]
