@@ -14,6 +14,7 @@
 LIBRARY=		lemonade
 
 SRCS=			lemonade_Type.ml
+SRCS+=			lemonade_Continuation.ml
 SRCS+=			lemonade_Lazy.ml
 SRCS+=			lemonade_List.ml
 SRCS+=			lemonade_Maybe.ml
