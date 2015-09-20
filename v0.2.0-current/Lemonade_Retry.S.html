@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Lemonade_Retry.RetryType.html">
+<link rel="Up" href="Lemonade_Retry.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Lemonade_Type" rel="Chapter" href="Lemonade_Type.html">
+<link title="Lemonade_Continuation" rel="Chapter" href="Lemonade_Continuation.html">
+<link title="Lemonade_Lazy" rel="Chapter" href="Lemonade_Lazy.html">
+<link title="Lemonade_List" rel="Chapter" href="Lemonade_List.html">
+<link title="Lemonade_Maybe" rel="Chapter" href="Lemonade_Maybe.html">
+<link title="Lemonade_Reader" rel="Chapter" href="Lemonade_Reader.html">
+<link title="Lemonade_Retry" rel="Chapter" href="Lemonade_Retry.html">
+<link title="Lemonade_State" rel="Chapter" href="Lemonade_State.html">
+<link title="Lemonade_Success" rel="Chapter" href="Lemonade_Success.html">
+<link title="Lemonade_Writer" rel="Chapter" href="Lemonade_Writer.html"><title>The Lemonade Library : Lemonade_Retry.S</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Lemonade_Retry.RetryType.html" title="Lemonade_Retry.RetryType">Previous</a>
+&nbsp;<a class="up" href="Lemonade_Retry.html" title="Lemonade_Retry">Up</a>
+&nbsp;</div>
+<h1>Module type <a href="type_Lemonade_Retry.S.html">Lemonade_Retry.S</a></h1>
+
+<pre><span class="keyword">module type</span> S = <code class="code">sig</code> <a href="Lemonade_Retry.S.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+The output signature of the functor <code class="code">Lemonade_Retry.Make</code>.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> </pre>
+<div class="info ">
+The type of error messages.<br>
+</div>
+
+
+<pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type"></code>tag</span> </pre>
+<div class="info ">
+The type of tags identifying retry strategies.<br>
+</div>
+
+
+<pre><span id="TYPEenvironment"><span class="keyword">type</span> <code class="type"></code>environment</span> </pre>
+<div class="info ">
+The type of computation environment.<br>
+</div>
+
+
+<pre><code><span id="TYPEoutcome"><span class="keyword">type</span> <code class="type">'a</code> outcome</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToutcome.Success"><span class="constructor">Success</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToutcome.Error"><span class="constructor">Error</span></span> <span class="keyword">of</span> <code class="type"><a href="Lemonade_Retry.S.html#TYPEerror">error</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+The type of computations throwing errors.<br>
+</div>
+
+
+<pre><span class="keyword">include</span> <a href="Lemonade_Type.S.html">Lemonade_Type.S</a></pre>
+
+<pre><span id="VALthrow"><span class="keyword">val</span> throw</span> : <code class="type"><a href="Lemonade_Retry.S.html#TYPEerror">error</a> -> 'a t</code></pre><div class="info ">
+Throw the given error.<br>
+</div>
+
+<pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">'a t -> (<a href="Lemonade_Retry.S.html#TYPEerror">error</a> -> 'a t) -> 'a t</code></pre><div class="info ">
+<code class="code">catch m handler</code> is a monad containing the same value as <code class="code">m</code>
+      and thrown errors are interepreted by the <code class="code">handler</code>.<br>
+</div>
+
+<pre><span id="VALretry"><span class="keyword">val</span> retry</span> : <code class="type"><a href="Lemonade_Retry.S.html#TYPEtag">tag</a> -><br>       (<a href="Lemonade_Retry.S.html#TYPEenvironment">environment</a> -> 'a t) -> 'a t -> 'a t</code></pre><div class="info ">
+<code class="code">retry tag strategy m</code> compute the same value as <code class="code">m</code> having the
+      chance let the retry policy use <code class="code">strategy</code> on errors.<br>
+</div>
+
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Lemonade_Retry.S.html#TYPEenvironment">environment</a> -> 'a t -> 'a <a href="Lemonade_Retry.S.html#TYPEoutcome">outcome</a></code></pre><div class="info ">
+Run the given retryable computation.<br>
+</div>
+</body></html>

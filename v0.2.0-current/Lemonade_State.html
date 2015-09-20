@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Lemonade_Retry.html">
+<link rel="next" href="Lemonade_Success.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Lemonade_Type" rel="Chapter" href="Lemonade_Type.html">
+<link title="Lemonade_Continuation" rel="Chapter" href="Lemonade_Continuation.html">
+<link title="Lemonade_Lazy" rel="Chapter" href="Lemonade_Lazy.html">
+<link title="Lemonade_List" rel="Chapter" href="Lemonade_List.html">
+<link title="Lemonade_Maybe" rel="Chapter" href="Lemonade_Maybe.html">
+<link title="Lemonade_Reader" rel="Chapter" href="Lemonade_Reader.html">
+<link title="Lemonade_Retry" rel="Chapter" href="Lemonade_Retry.html">
+<link title="Lemonade_State" rel="Chapter" href="Lemonade_State.html">
+<link title="Lemonade_Success" rel="Chapter" href="Lemonade_Success.html">
+<link title="Lemonade_Writer" rel="Chapter" href="Lemonade_Writer.html"><title>The Lemonade Library : Lemonade_State</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Lemonade_Retry.html" title="Lemonade_Retry">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Lemonade_Success.html" title="Lemonade_Success">Next</a>
+</div>
+<h1>Module <a href="type_Lemonade_State.html">Lemonade_State</a></h1>
+
+<pre><span class="keyword">module</span> Lemonade_State: <code class="code">sig</code> <a href="Lemonade_State.html">..</a> <code class="code">end</code></pre><div class="info module top">
+State monad.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Lemonade_State.StateType.html">StateType</a> = <code class="code">sig</code> <a href="Lemonade_State.StateType.html">..</a> <code class="code">end</code></pre><div class="info">
+The input signature of the functor <code class="code">Lemonade_State.Make</code>.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Lemonade_State.S.html">S</a> = <code class="code">sig</code> <a href="Lemonade_State.S.html">..</a> <code class="code">end</code></pre><div class="info">
+The output signature of the functor <code class="code">Lemonade_State.Make</code>.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Lemonade_State.Make.html">Make</a> <code class="code">(</code><code class="code">State</code><code class="code"> : </code><code class="type"><a href="Lemonade_State.StateType.html">StateType</a></code><code class="code">) </code>: <code class="code">sig</code> <a href="Lemonade_State.Make.html">..</a> <code class="code">end</code></pre><div class="info">
+Functor building an implementation of the <code class="code">State</code> monad.
+</div>
+</body></html>
