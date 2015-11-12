@@ -36,6 +36,7 @@ sig
     val ( <* ) : 'a t -> 'b t -> 'a t
     val ( >* ) : 'a t -> 'b t -> 'b t
     val ( >>= ) : 'a t -> ('a -> 'b t) -> 'b t
+    val ( >|= ) : 'a t -> ('a -> 'b) -> 'b t
     val ( >> ) : 'a t -> (unit -> 'b t) -> 'b t
     val ( >=> ) : ('a -> 'b t) -> ('b -> 'c t) -> ('a -> 'c t)
     val ( <=< ) : ('b -> 'c t) -> ('a -> 'b t) -> ('a -> 'c t)

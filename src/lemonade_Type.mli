@@ -88,6 +88,9 @@ sig
     val ( >>= ) : 'a t -> ('a -> 'b t) -> 'b t
     (** [ m >>= f] is equivalent to [bind m f]. *)
 
+    val ( >|= ) : 'a t -> ('a -> 'b) -> 'b t
+    (** A composable shorthand for [map]. *)
+
     val ( >> ) : 'a t -> (unit -> 'b t) -> 'b t
     (** [m >> f] binds [m] to [f], a context function. *)
 
