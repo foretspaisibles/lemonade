@@ -1,7 +1,7 @@
 opam-version: "1.2"
 maintainer: "michipili@gmail.com"
 authors: "Michael Grünewald"
-version: "0.3.0-current"
+version: "0.3.1-releng"
 license: "CeCILL-B"
 homepage: "https://github.com/michipili/lemonade"
 bug-reports: "https://github.com/michipili/lemonade/issues"
