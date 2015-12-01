@@ -1,4 +1,4 @@
-### Makefile -- Test suite
+### Makefile -- Project Lemonade
 
 # Lemonade (https://github.com/michipili/lemonade)
 # This file is part of Lemonade
@@ -11,22 +11,10 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
-PROGRAM=		unit-testing
+PROGRAM=		ppx_lemonade
+SRCS=			ppx_lemonade.ml
 
-SRCS=			testList.ml
-SRCS+=			testMaybe.ml
-SRCS+=			testPPX.ml
-SRCS+=			main.ml
-
-OCAMLLFLAGS+=		-linkall
-OCAMLCFLAGS+=		-ppx ${.OBJDIR}/../ppx/ppx_lemonade
-
-
-do-test: build
-	./unit-testing
-
-do-install:
-	${NOP}
+COMPILE=		native
 
 .include "ocaml.prog.mk"
 

@@ -16,6 +16,7 @@ VERSION=		0.3.1-current
 OFFICER=		michipili@gmail.com
 
 MODULE=			ocaml.lib:src
+MODULE+=		ocaml.prog:ppx
 MODULE+=		ocaml.meta:meta
 MODULE+=		ocaml.manual:manual
 
@@ -23,6 +24,7 @@ SUBDIR=			testsuite
 
 EXTERNAL=		ocaml.findlib:broken
 EXTERNAL+=		ocaml.findlib:mixture
+EXTERNAL+=		ocaml.findlib:ppx_tools.metaquot
 
 CONFIGURE+=		Makefile.config.in
 
