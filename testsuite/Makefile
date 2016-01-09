@@ -22,6 +22,7 @@ SRCS+=			testMaybe.ml
 SRCS+=			testPPX.ml
 .endif
 
+SRCS+=			testStream.ml
 SRCS+=			main.ml
 
 OCAMLLFLAGS+=		-linkall
