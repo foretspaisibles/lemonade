@@ -23,10 +23,13 @@ remove: [
   ["ocamlfind" "remove" "lemonade"]
   ["rm" "-rf" "%{share}%/doc/lemonade"]
 ]
+available: [
+  ocaml-version >= "4.00.1"
+]
 depends: [
   "broken" {>= "0.4.2"}
   "bsdowl" {>= "3.0.0"}
-  "mixture"{>= "0.2.1"}
+  "mixture"{>= "1.0.0"}
   "ocamlfind"
 ]
 depexts: [
