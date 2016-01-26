@@ -4,6 +4,7 @@ compiler:
   - 4.02.3
 repository:
   - ocamlfind
+  - ppx_tools
+  - mixture
 git:
   - https://github.com/michipili/broken.git
-  - https://github.com/michipili/mixture.git
