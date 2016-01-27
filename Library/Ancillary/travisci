@@ -24,5 +24,6 @@ fi
 autoconf
 ./configure --prefix="${INSTALL_PREFIX}" --enable-ppx-rewriter=${TRAVIS_ENABLE_PPX_REWRITER}
 bmake -I "${INSTALL_PREFIX}/share/bsdowl" all
+bmake -I "${INSTALL_PREFIX}/share/bsdowl" test
 
 ### End of file `travisci'
