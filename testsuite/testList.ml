@@ -1,7 +1,7 @@
 (* TestList -- Test the list monad
 
-   Mixture (https://github.com/michipili/mixture)
-   This file is part of Mixture
+   Lemonade (https://github.com/michipili/lemonade)
+   This file is part of Lemonade
 
    Copyright © 2013–2015 Michael Grünewald
 
