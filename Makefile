@@ -15,8 +15,14 @@ PACKAGE=		lemonade
 VERSION=		0.3.1-current
 OFFICER=		michipili@gmail.com
 
+.sinclude "Makefile.config"
+
 MODULE=			ocaml.lib:src
+
+.if "${ENABLE_PPX_REWRITER}" == "yes"
 MODULE+=		ocaml.prog:ppx
+.endif
+
 MODULE+=		ocaml.meta:meta
 MODULE+=		ocaml.manual:manual
 
@@ -24,7 +30,10 @@ SUBDIR=			testsuite
 
 EXTERNAL=		ocaml.findlib:broken
 EXTERNAL+=		ocaml.findlib:mixture
+
+.if "${ENABLE_PPX_REWRITER}" == "yes"
 EXTERNAL+=		ocaml.findlib:ppx_tools.metaquot
+.endif
 
 CONFIGURE+=		Makefile.config.in
 
