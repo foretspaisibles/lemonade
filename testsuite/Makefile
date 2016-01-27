@@ -30,10 +30,10 @@ OCAMLCFLAGS+=		-ppx ${.OBJDIR}/../ppx/ppx_lemonade
 .endif
 
 
-do-test: build
-	./unit-testing
+test: ${PROGRAM}
+	${PROGRAM:tA}
 
-do-install:
+install:
 	${NOP}
 
 .include "ocaml.prog.mk"
