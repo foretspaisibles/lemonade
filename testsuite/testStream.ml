@@ -32,7 +32,7 @@ let assert_success_int id ?expected_failure f a b =
     ?expected_failure
     ~printer:(pp_print_outcome pp_print_int)
     ~equal:( (=) )
-    (fun x -> Success.run @@ f x) a b
+    (fun x -> Success.run (f x)) a b
 
 let enumerate n =
   SStream.from
@@ -40,7 +40,7 @@ let enumerate n =
 
 let fail n =
   SStream.from
-    Success.(fun i -> if i >= 0 && i < n then return(Some i) else throw "Error")
+    Success.(fun i -> if i >= 0 && i < n then return(Some i) else error "Error")
 
 let () =
   register_suite "stream" "Test monadic streams" [
