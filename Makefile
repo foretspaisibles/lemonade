@@ -19,7 +19,7 @@ OFFICER=		michipili@gmail.com
 
 MODULE=			ocaml.lib:src
 
-.if "${ENABLE_PPX_REWRITER}" == "yes"
+.if!empty(ENABLE_PPX_REWRITER:Myes)
 MODULE+=		ocaml.prog:ppx
 .endif
 
@@ -31,7 +31,7 @@ SUBDIR=			testsuite
 EXTERNAL=		ocaml.findlib:broken
 EXTERNAL+=		ocaml.findlib:mixture
 
-.if "${ENABLE_PPX_REWRITER}" == "yes"
+.if!empty(ENABLE_PPX_REWRITER:Myes)
 EXTERNAL+=		ocaml.findlib:ppx_tools.metaquot
 .endif
 

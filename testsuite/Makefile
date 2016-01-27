@@ -13,17 +13,19 @@
 
 PROGRAM=		unit-testing
 
+.sinclude "${SRCDIR}/Makefile.config"
+
 SRCS=			testList.ml
 SRCS+=			testMaybe.ml
 
-.if "${ENABLE_PPX_REWRITER}" == "yes"
+.if!empty(ENABLE_PPX_REWRITER:Myes)
 SRCS+=			testPPX.ml
 .endif
 
 SRCS+=			main.ml
 
 OCAMLLFLAGS+=		-linkall
-.if "${ENABLE_PPX_REWRITER}" == "yes"
+.if!empty(ENABLE_PPX_REWRITER:Myes)
 OCAMLCFLAGS+=		-ppx ${.OBJDIR}/../ppx/ppx_lemonade
 .endif
 
