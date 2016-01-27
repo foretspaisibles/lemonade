@@ -4,6 +4,6 @@ compiler:
   - 4.02.3
 repository:
   - ocamlfind
+  - mixture
 git:
   - https://github.com/michipili/broken.git
-  - https://github.com/michipili/mixture.git

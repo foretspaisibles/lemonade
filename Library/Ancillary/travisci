@@ -16,8 +16,14 @@
 INSTALL_PREFIX="${HOME}/.local"
 
 eval $(opam config env --switch ${TRAVIS_OCAML_VERSION:?})
+
+if [ "${TRAVIS_ENABLE_PPX_REWRITER}" = "yes" ]; then
+    opam install ppx_tools
+fi
+
 autoconf
-./configure --prefix="${INSTALL_PREFIX}"
+./configure --prefix="${INSTALL_PREFIX}" --enable-ppx-rewriter=${TRAVIS_ENABLE_PPX_REWRITER}
 bmake -I "${INSTALL_PREFIX}/share/bsdowl" all
+bmake -I "${INSTALL_PREFIX}/share/bsdowl" test
 
 ### End of file `travisci'

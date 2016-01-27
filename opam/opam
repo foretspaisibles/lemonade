@@ -11,7 +11,9 @@ tags: [
   "monad"
 ]
 build: [
-  ["./configure" "--prefix" prefix]
+  ["./configure"
+    "--prefix" prefix
+    "--%{ppx_tools:enable}%-ppx-rewriter"]
   ["bmake" "-I%{bsdowl:share}%" "all"] {os != "freebsd"}
   ["make"  "-I%{bsdowl:share}%" "all"] {os  = "freebsd"}
 ]

@@ -22,6 +22,8 @@ PREFIX?=		${prefix}
 EXEC_PREFIX?=		${exec_prefix}
 DATAROOTDIR?=		${datarootdir}
 
+ENABLE_PPX_REWRITER?=	@ENABLE_PPX_REWRITER@
+
 # Local Variables:
 # mode: makefile
 # End:
