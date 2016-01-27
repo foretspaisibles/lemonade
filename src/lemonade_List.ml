@@ -50,10 +50,8 @@ struct
     let bind m f =
       M.bind m
         (fun lst ->
-           (List.map f lst)
-           |> M.dist
-           |> (M.map List.concat))
-
+           (M.map List.concat)
+             (M.dist (List.map f lst)))
     let return x =
       M.return([x])
 
