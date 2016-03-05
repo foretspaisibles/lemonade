@@ -61,6 +61,7 @@ sig
     (** The type of consumed data. *)
 
     include Lemonade_Type.S
+      with type 'a t = 'a M.t t
 
     val read : environment t
     (** Access the current environment. *)
