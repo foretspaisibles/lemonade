@@ -271,10 +271,6 @@ let lemonade_mapper argv =
   let super = default_mapper in
   let expr this e =
     match e with
-    | [%expr [%e? lhs] >> [%e? rhs]] ->
-        let pat = [%pat? _]in
-        let lhs, rhs = this.expr this lhs, this.expr this rhs in
-        [%expr Lwt.bind [%e lhs] (fun [%p pat] -> [%e rhs])]
     | { pexp_desc = Pexp_extension ({ txt = id; loc }, PStr [{ pstr_desc = Pstr_eval (exp, attr) }]) } ->
         (match lemonade_extension ~loc id with
          | Some(monad) -> lemonade_expression this monad exp attr
