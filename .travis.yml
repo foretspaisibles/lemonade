@@ -5,6 +5,7 @@ addons:
     sources:
     - avsm
     packages:
+    - aspcud
     - ocaml
     - opam
     - ocaml-native-compilers
