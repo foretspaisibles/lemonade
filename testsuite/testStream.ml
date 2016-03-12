@@ -48,8 +48,18 @@ let () =
       (fun () -> SStream.fold ( + ) (enumerate 10) 0)
       ()
       (Success.Success 45);
+
     assert_success_int "fail"
       (fun () -> SStream.fold ( + ) (fail 10) 0)
       ()
       (Success.Error "Error");
+
+    assert_success_int "map"
+      (fun () ->
+         SStream.fold
+           ( + )
+           (SStream.map (fun x -> 2 * x) (enumerate 10))
+           0)
+      ()
+      (Success.Success 90);
   ]
