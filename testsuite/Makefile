@@ -23,6 +23,7 @@ SRCS+=			testPPX.ml
 .endif
 
 SRCS+=			testStream.ml
+SRCS+=			testSuccessReader.ml
 SRCS+=			main.ml
 
 OCAMLLFLAGS+=		-linkall
