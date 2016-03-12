@@ -238,7 +238,12 @@ struct
         | None -> Monad.return true)
 
   let map f m =
-    from (fun _ -> peek m >|= (function Some a -> Some (f a) | None -> None))
+    let f _ =
+      peek m >>= function
+      | Some a -> (junk m >>= fun () -> Monad.return(Some (f a)))
+      | None -> Monad.return None
+    in
+    from f
 
   let map_list f m =
     let page = ref [] in
