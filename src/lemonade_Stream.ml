@@ -238,7 +238,12 @@ struct
         | None -> Monad.return true)
 
   let map f m =
-    from (fun _ -> peek m >|= (function Some a -> Some (f a) | None -> None))
+    let f _ =
+      peek m >>= function
+      | Some a -> (junk m >>= fun () -> Monad.return(Some (f a)))
+      | None -> Monad.return None
+    in
+    from f
 
   let map_list f m =
     let page = ref [] in
@@ -260,7 +265,17 @@ struct
     from (fun _ -> junk_while not_p m >>= fun () -> peek m)
 
   let filter_map f m =
-    from (fun _ -> peek m >|= (function Some a -> f a | None -> None))
+    let rec next serial =
+      Monad.bind (get m)
+        begin function
+          | Some(a) -> begin match f a with
+              | Some(x) -> Monad.return(Some x)
+              | None -> next serial
+            end
+          | None -> Monad.return None
+        end
+    in
+    from next
 
   let flatten m =
     map_list (fun lst -> lst) m
