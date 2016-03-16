@@ -62,4 +62,37 @@ let () =
            0)
       ()
       (Success.Success 90);
+
+    assert_success_int "npeek"
+      (fun () ->
+         Success.map List.length
+           (SStream.npeek 15 (enumerate 10)))
+      ()
+      (Success.Success 10);
+
+
+    assert_success_int "concat"
+      (fun () ->
+         let pyramid n =
+           SStream.from
+             Success.(fun i -> if i >= 0 && i < n then return(Some(enumerate i)) else return None)
+         in
+         SStream.fold
+           ( + )
+           (SStream.concat (pyramid 5))
+           0)
+      ()
+      (Success.Success (3 + 2 + 1 + 2 + 1 + 1));
+
+
+    assert_success_int "filter_map"
+      (fun () ->
+         let stream =
+           SStream.filter_map
+             (fun n -> if n mod 2 = 0 then Some(n) else None)
+             (enumerate 10)
+         in
+         SStream.fold ( + ) stream 0)
+      ()
+      (Success.Success (2 + 4 + 6 + 8));
   ]
