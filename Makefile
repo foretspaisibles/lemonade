@@ -12,7 +12,7 @@
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
 PACKAGE=		lemonade
-VERSION=		0.4.0-current
+VERSION=		0.5.0-current
 OFFICER=		michipili@gmail.com
 
 .sinclude "Makefile.config"
