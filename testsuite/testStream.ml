@@ -95,4 +95,13 @@ let () =
          SStream.fold ( + ) stream 0)
       ()
       (Success.Success (2 + 4 + 6 + 8));
+
+    assert_success_int "of_list"
+      (fun () ->
+         SStream.fold
+           ( + )
+           (SStream.of_list [1; 2; 3; 4; 5])
+           0)
+      ()
+      (Success.Success 15);
   ]
