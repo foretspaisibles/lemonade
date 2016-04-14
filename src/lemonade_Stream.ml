@@ -262,7 +262,7 @@ struct
     let not_p x =
       not(p x)
     in
-    from (fun _ -> junk_while not_p m >>= fun () -> peek m)
+    from (fun _ -> junk_while not_p m >>= fun () -> get m)
 
   let filter_map f m =
     let rec next serial =
