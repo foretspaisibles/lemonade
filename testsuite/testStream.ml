@@ -95,4 +95,24 @@ let () =
          SStream.fold ( + ) stream 0)
       ()
       (Success.Success (2 + 4 + 6 + 8));
+
+    assert_success_int "of_list"
+      (fun () ->
+         SStream.fold
+           ( + )
+           (SStream.of_list [1; 2; 3; 4; 5])
+           0)
+      ()
+      (Success.Success 15);
+
+
+    assert_success_int "filter"
+      (fun () ->
+         SStream.fold
+           ( + )
+           (SStream.filter (fun x -> x mod 2 = 1)
+              (SStream.of_list [1; 2; 3; 4; 5]))
+           0)
+      ()
+      (Success.Success 9);
   ]

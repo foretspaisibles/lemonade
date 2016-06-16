@@ -30,12 +30,18 @@ module MethodsMonad = Mixture_Monad.Make(Basis)
 include Basis
 include MethodsMonad
 
-let pp_print f pp m =
+
+let pp_print f ff lst =
   let open Format in
-  let sep = ref "" in
-  fprintf pp "[";
-  List.iter (fun x -> fprintf pp "%s%a" (!sep) f x; sep := "; ") m;
-  fprintf pp "]"
+  let flag = ref false in
+  let loop item =
+    if !flag then fprintf ff ";@ ";
+    flag := true;
+    fprintf ff "%a" f item
+  in
+  fprintf ff "@[<hov 1>[";
+  List.iter loop lst;
+  fprintf ff "]@]"
 
 
 module T(M:Mixture_Monad.S) =
